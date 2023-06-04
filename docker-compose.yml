@@ -1,0 +1,16 @@
+services:
+  dev:
+    image: node:18.7.0
+    ports:
+      - 8000:8000
+    environment:
+      - SERVER_PORT=8000
+    volumes:
+      - ./:/code
+    command:
+      - /bin/sh
+      - -c
+      - |
+        cd code
+        yarn install
+        yarn dev
